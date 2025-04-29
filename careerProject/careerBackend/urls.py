@@ -6,6 +6,7 @@ import os
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('<str:page_name>/', views.my_dynamic_page, name='dynamic_page'),
 ]
 
 # Serve static files (like images) during development
