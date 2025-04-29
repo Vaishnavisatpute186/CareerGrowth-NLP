@@ -1,0 +1,14 @@
+from django.urls import path
+from . import views
+from django.conf import settings  # Import settings
+from django.conf.urls.static import static  # Import static
+import os
+
+urlpatterns = [
+    path('', views.home, name='home'),
+]
+
+# Serve static files (like images) during development
+if settings.DEBUG:
+    template_images_dir = os.path.join(settings.BASE_DIR, 'careerBackend', 'templates', 'careerBackend', 'images')
+    urlpatterns += static('/images/', document_root=template_images_dir)
