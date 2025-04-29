@@ -80,28 +80,28 @@ font-weight: bold;
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+				<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="Aboutus.html">About us</a>
+				<a class="nav-link text-white" href="{% url 'Aboutus' %}">About us</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="Courses.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<a class="nav-link dropdown-toggle text-white" href="{% url 'Courses' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Courses</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="Engineering.html">Engineering</a></li>
-                  <li><a class="dropdown-item" href="Medical.html">Medical</a></li>
-                  <li><a class="dropdown-item" href="government.html">Government Services</a></li>
-                  <li><a class="dropdown-item" href="Law.html">law</a></li>
-                  <li><a class="dropdown-item" href="Defence.html">Defence</a></li>
-                  <li><a class="dropdown-item" href="others.html">Many more</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Engineering' %}">Engineering</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Medical' %}">Medical</a></li>
+				  <li><a class="dropdown-item" href="{% url 'government' %}">Government Services</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Law' %}">law</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Defence' %}">Defence</a></li>
+				  <li><a class="dropdown-item" href="{% url 'others' %}">Many more</a></li>
                 </ul>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="Register.html">Register</a>
+				  <a class="nav-link text-white" href="{% url 'Register' %}">Register</a>
                 </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="contactus.html">Contact us</a>
+				<a class="nav-link text-white" href="{% url 'contactus' %}">Contact us</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -116,22 +116,23 @@ font-weight: bold;
 
 
 <center>
-<form>
+<form method="post" action="{% url 'Register' %}" id="registerform">
+  {% csrf_token %}  {#  Important for security #}
 <center><legend><h1>Fill the form given below to receive personalized career guidance.</h1></legend></center>
 <fieldset>
 </br> 
 <label for="First Name:"><span>*</span>First Name:</label>
-<input type="text" placeholder="Enter your name" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="First Name:">
+<input type="text" placeholder="Enter your name" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="First Name:">
 
 
 </br><br/></br>
 <label for="Last Name:"><span>*</span>Last Name: </label>
-<input type="text" placeholder="Enter your name" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Last Name: ">
+<input type="text" placeholder="Enter your name" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Last Name: ">
 
 
 </br></br></br>
 <label for="Age:"><span>*</span>Age: </label>
-<input type="text" placeholder="Enter your age" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Age:">
+<input type="text" placeholder="Enter your age" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Age:">
 
 <br/></br></br>
     <label for="State"><span>*</span>State</label>
@@ -179,36 +180,36 @@ font-weight: bold;
 
 </br></br></br>
 <label for="Qualifications"><span>*</span>Qualifications:</label>
-<input type="text" placeholder="Enter your Qualifications" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Qualifications:">
+<input type="text" placeholder="Enter your Qualifications" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Qualifications:">
 
 
 
 </br></br></br>
 <label for="Percentage:"><span>*</span>Percentage:</label>
-<input type="text" placeholder=" " id="" style="border-radius: 8px;padding: 5px;width: 200px;" required name="Percentage:">
+<input type="text" placeholder=" " id="" style="border-radius: 8px;padding: 5px;width: 200px;" name="Percentage:">
 
 
 
 <label for="CGPA:"><span>*</span>CGPA:</label>
-<input type="text" placeholder=" " id="" style="border-radius: 8px;padding: 5px;width: 200px;" required name="CGPA:">
+<input type="text" placeholder=" " id="" style="border-radius: 8px;padding: 5px;width: 200px;" name="CGPA:">
 
 
 </br></br></br>
 <label for="Hobbies:"><span>*</span>Hobbies:</label>
-<input type="text" placeholder="Enter your Interests " id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Hobbies:">
+<input type="text" placeholder="Enter your Interests " id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Hobbies:">
 
 </br></br></br>
 <label for="Interests:"><span>*</span>Interests:</label>
-<input type="text" placeholder="Enter your Interests" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Percentage:">
+<input type="text" placeholder="Enter your Interests" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Percentage:">
 
 </br></br></br>
 <label for="Skills:"><span>*</span>Skills:</label>
-<input type="text" placeholder="Enter your Skills" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Skills:">
+<input type="text" placeholder="Enter your Skills" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Skills:">
 
 
 </br></br></br>
 <label for="Message:"><span>*</span>Message:</label>
-<input type="text" placeholder="Enter your Goals" id="" style="border-radius: 8px;padding: 5px;width: 475px;" required name="Message:">
+<input type="text" placeholder="Enter your Goals" id="" style="border-radius: 8px;padding: 5px;width: 475px;" name="Message:">
 
 
 
@@ -219,49 +220,41 @@ font-weight: bold;
     </Center>
 </div>       
 </form>
+<div id="response">
+  {#  Response will be displayed here #}
+</div>
 </center>
 
 <script>
-    const form = document.getElementById('myForm');
+	const form = document.getElementById('registerform');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+	const responseDiv = document.getElementById('response');
+	form.addEventListener('submit', (event) => {
+            event.preventDefault();  // Prevent default form submission
 
-        const formData = new FormData(form);
+            const formData = new FormData(form);
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const result = data.result;
-            let localPath = '';
-
-            switch (result) {
-                case 'PAGE_ONE':
-                    localPath = 'file:///C:/Users/YourUsername/Downloads/HTML/page1.html'; // Replace with your actual username
-                    break;
-                case 'PAGE_TWO':
-                    localPath = 'file:///C:/Users/YourUsername/Downloads/HTML/page2.html'; // Replace with your actual username
-                    break;
-                case 'PAGE_THREE':
-                    localPath = 'file:///C:/Users/YourUsername/Downloads/HTML/page3.html'; // Replace with your actual username
-                    break;
-                default:
-                    alert('Invalid response from server.');
-                    return; // Important: Stop execution if the response is invalid
-            }
-            window.location.href = localPath;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while communicating with the server.');
+            fetch(form.action, {  // Use the form's action attribute
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })  // Parse JSON response
+            .then(data => {
+			  if (data.redirect_url) {
+				window.location.href = data.redirect_url; // Redirect
+			  } else {
+				responseDiv.innerHTML = `<p>data: ${data.message}</p><p>choice: ${data.career}</p>`;  // Display the response
+			  }
+            })
+            .catch(error => {
+                responseDiv.textContent = `Error: ${error}`;
+            });
         });
-    });
 </script>
 
 
@@ -270,11 +263,11 @@ font-weight: bold;
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-dark p-3 mb-0 ">
     
-      <li class="breadcrumb-item" ><a href="home.html">Home</a></li>
-      <li class="breadcrumb-item" ><a href="Aboutus.html">About Us</a></li>
-      <li class="breadcrumb-item"><a href="Courses.html">Courses</a></li>
-      <li class="breadcrumb-item"><a href="Register.html">Register</a></li>
-      <li class="breadcrumb-item"><a href="contactus.html">Contact Us</a></li>
+	  <li class="breadcrumb-item" ><a href="{% url 'home' %}">Home</a></li>
+	  <li class="breadcrumb-item" ><a href="{% url 'Aboutus' %}">About Us</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'Courses' %}">Courses</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'Register' %}">Register</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'contactus' %}">Contact Us</a></li>
       <li class="breadcrumb-item"><a href="http://www.rcert.ac.in">&copy;Designed and \developed By RCERT Chandrapur</a></li>
       
     </ol>
