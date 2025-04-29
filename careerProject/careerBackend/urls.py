@@ -12,3 +12,6 @@ urlpatterns = [
 if settings.DEBUG:
     template_images_dir = os.path.join(settings.BASE_DIR, 'careerBackend', 'templates', 'careerBackend', 'images')
     urlpatterns += static('/images/', document_root=template_images_dir)
+
+    css_dir = os.path.join(settings.BASE_DIR, 'careerBackend', 'templates', 'careerBackend', 'CSS')
+    urlpatterns += static('/CSS/', document_root=css_dir)
