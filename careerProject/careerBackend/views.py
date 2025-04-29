@@ -3,16 +3,35 @@ from django.http import Http404
 from django.template.loader import get_template, TemplateDoesNotExist
 from django.urls import path
 
-# Create your views here.
 def home(request):
     return render(request, 'careerBackend/index.html')
 
-def my_dynamic_page(request, page_name):
-    """
-    View that tries to render a template with the given page_name.
-    """
-    try:
-        template = get_template(f'careerBackend/{page_name}')  # Construct template name
-    except TemplateDoesNotExist:
-        raise Http404(f"Page '{page_name}' does not exist")
-    return render(request, f'careerBackend/{page_name}')
+def about(request):
+    return render(request, 'careerBackend/Aboutus.html')
+
+def courses(request):
+    return render(request, 'careerBackend/Courses.html')
+
+def defence(request):
+    return render(request, 'careerBackend/Defence.html')
+
+def engineering(request):
+    return render(request, 'careerBackend/Engineering.html')
+
+def law(request):
+    return render(request, 'careerBackend/Law.html')
+
+def medical(request):
+    return render(request, 'careerBackend/Medical.html')
+
+def register(request):
+    return render(request, 'careerBackend/Register.html')
+
+def contact(request):
+    return render(request, 'careerBackend/contactus.html')
+
+def government(request):
+    return render(request, 'careerBackend/government.html')
+
+def others(request):
+    return render(request, 'careerBackend/others.html')

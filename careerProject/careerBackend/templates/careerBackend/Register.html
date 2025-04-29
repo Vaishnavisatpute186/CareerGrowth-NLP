@@ -80,28 +80,28 @@ font-weight: bold;
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+				<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="Aboutus.html">About us</a>
+				<a class="nav-link text-white" href="{% url 'Aboutus' %}">About us</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="Courses.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<a class="nav-link dropdown-toggle text-white" href="{% url 'Courses' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Courses</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="Engineering.html">Engineering</a></li>
-                  <li><a class="dropdown-item" href="Medical.html">Medical</a></li>
-                  <li><a class="dropdown-item" href="government.html">Government Services</a></li>
-                  <li><a class="dropdown-item" href="Law.html">law</a></li>
-                  <li><a class="dropdown-item" href="Defence.html">Defence</a></li>
-                  <li><a class="dropdown-item" href="others.html">Many more</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Engineering' %}">Engineering</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Medical' %}">Medical</a></li>
+				  <li><a class="dropdown-item" href="{% url 'government' %}">Government Services</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Law' %}">law</a></li>
+				  <li><a class="dropdown-item" href="{% url 'Defence' %}">Defence</a></li>
+				  <li><a class="dropdown-item" href="{% url 'others' %}">Many more</a></li>
                 </ul>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="Register.html">Register</a>
+				  <a class="nav-link text-white" href="{% url 'Register' %}">Register</a>
                 </li>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="contactus.html">Contact us</a>
+				<a class="nav-link text-white" href="{% url 'contactus' %}">Contact us</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -270,11 +270,11 @@ font-weight: bold;
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-dark p-3 mb-0 ">
     
-      <li class="breadcrumb-item" ><a href="home.html">Home</a></li>
-      <li class="breadcrumb-item" ><a href="Aboutus.html">About Us</a></li>
-      <li class="breadcrumb-item"><a href="Courses.html">Courses</a></li>
-      <li class="breadcrumb-item"><a href="Register.html">Register</a></li>
-      <li class="breadcrumb-item"><a href="contactus.html">Contact Us</a></li>
+	  <li class="breadcrumb-item" ><a href="{% url 'home' %}">Home</a></li>
+	  <li class="breadcrumb-item" ><a href="{% url 'Aboutus' %}">About Us</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'Courses' %}">Courses</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'Register' %}">Register</a></li>
+	  <li class="breadcrumb-item"><a href="{% url 'contactus' %}">Contact Us</a></li>
       <li class="breadcrumb-item"><a href="http://www.rcert.ac.in">&copy;Designed and \developed By RCERT Chandrapur</a></li>
       
     </ol>
