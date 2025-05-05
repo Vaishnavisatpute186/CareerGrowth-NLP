@@ -37,6 +37,7 @@ def others(request):
 
 def register(request):
     if request.method == 'POST':
+        print(request)
         possibleCareers = ['Defence', 'Engineering', 'Law', 'Medical', 'government', 'others']
         message = 'Form submitted successfully!'  #  You can customize this
         choice = random.choice(possibleCareers)
