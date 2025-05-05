@@ -9,7 +9,65 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/footer.css">
     <title>Career Growth</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: white;
+        color: black;
+        font-family: 'Georgia', serif;
+      }
+  
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 60px;
+        background-color: black;
+      }
+  
+      .footer-left h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+  
+      .footer-left p {
+        font-size: 12px;
+        color: gray;
+        margin-top: 8px;
+      }
+  
+      .footer-center {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+  
+      .footer-center a {
+        text-decoration: none;
+        color: gray;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+  
+      .footer-center a:hover {
+        color: white;
+      }
+  
+      .footer-right {
+        text-align: right;
+        color: gray;
+        font-size: 14px;
+      }
+  
+      .footer-right i {
+        margin: 0 5px;
+        color: white;
+      }
+
+    </style>
   </head>
+  <body>
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
         <div class="container-fluid">
@@ -42,20 +100,17 @@
               </li>
 
               <li class="nav-item">
-				<a class="nav-link text-white" href="{% url 'contactus' %}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact us</a>
+				<a class="nav-link text-white" href="{% url 'contactus' %}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Feedback</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            
           </div>
         </div>
       </nav>
       
-    <!---Carousel starting-->
+     <!---Carousel starting-->
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -63,24 +118,24 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/carousel1.jpg" class="d-block w-100" alt="..." height="675">
+          <img src="images/image1.jpg" class="d-block w-100" alt="..." height="675">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Career Growth</h5>
-            <p>Climbing the cooperate ladder.</p>
+            <h5 style="color: black;">CAREER GROWTH</h5>
+            <p style="color: black;">Climbing the cooperate ladder.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/carousel2.jpg" class="d-block w-100" alt="..." height="675">
+          <img src="images/image2.jpg" class="d-block w-100" alt="..." height="675">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Career Exploration</h5>
-            <p>It's okay to be confused about your career choice.</p>
+            <h5 style="color: black;">CAREER EXPLORATION</h5>
+            <p style="color: black;">It's okay to be confused about your career choice.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/carousel3.jpg" class="d-block w-100" alt="..." height="675">
+          <img src="images/image3.jpg" class="d-block w-100" alt="..." height="675">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Success</h5>
-            <p>Guidance turned dream into reality.</p>
+            <h5 style="color: black;">SUCESS</h5>
+            <p style="color: black;">Guidance turned dream into reality.</p>
           </div>
         </div>
       </div>
@@ -93,7 +148,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
     <!--Album start-->
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
@@ -119,8 +173,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Engineering</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'Engineering' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    
+                    </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -136,8 +191,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Medical</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'Medical' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    
+                    </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -153,7 +209,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Government services</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'government' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -170,8 +228,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Law</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'Law' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    
+                   </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -187,8 +246,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Defence</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'Defence' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                   
+                   </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -204,8 +264,9 @@
                 <p class="card-text" style="font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Others</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
+					<a href="{% url 'others' %}">
                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    
+                    </a>
                   </div>
                   <!--small class="text-muted">9 mins</!--small>-->
                 </div>
@@ -224,98 +285,29 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header" style="background-color: #9EC6F3;">
-          <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Feedback Form</form></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
         
             <form class="row g-3">
                 <div class="col-md-12">
-                  <label for="inputEmail4" class="form-label">First Name</label>
+                  <label for="inputEmail4" class="form-label">Full Name</label>
                   <input type="text" class="form-control" id="inputFirstName">
-                </div>
-                <div class="col-md-12">
-                  <label for="inputEmail4" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="inputLastName">
                 </div>
                 <div class="col-md-12">
                   <label for="inputEmail4" class="form-label">Email</label>
                   <input type="email" class="form-control" id="inputEmail4">
                 </div>
                 <div class="col-md-12">
-                  <label for="inputPassword4" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword4">
+                  <label for="inputEmail4" class="form-label">Phone No.</label>
+                  <input type="email" class="form-control" id="inputEmail4">
                 </div>
-                <div class="col-12">
-                  <label for="inputAddress" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Street, Area, Colony">
-                </div>
-                <div class="col-12">
-                  <label for="inputAddress2" class="form-label">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-12">
-                  <label for="inputCity" class="form-label">City</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-12">
-                  <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose State</option>
-                    <option>1. Andhra Pradesh</option>
-        <option>2. Andaman and Nicobar Islands</option>
-        <option>3. Arunachal Pradesh</option>
-        <option>4. Assam</option>
-        <option>5. Bihar</option>
-        <option>6. Chandigarh</option>
-        <option>7. Chhattisgarh</option>
-        <option>8. Dadra and Nagar Haveli and Daman and Diu</option>
-        <option>9. Delhi</option>
-        <option>10. Goa</option>
-        <option>11. Gujarat</option>
-        <option>12. Haryana</option>
-        <option>13. Himachal Pradesh</option>
-        <option>14. Jammu and Kashmir</option>
-        <option>15. Jharkhand</option>
-        <option>16. Karnataka</option>
-        <option>17. Kerala</option>
-        <option>18. Ladakh</option>
-        <option>19. Lakshadweep</option>
-        <option>20. Madhya Pradesh</option>
-        <option>21. Maharashtra</option>
-        <option>22. Manipur</option>
-        <option>23. Meghalaya</option>
-        <option>24. Mizoram</option>
-        <option>25. Nagaland</option>
-        <option>26. Odisha</option>
-        <option>27. Puducherry</option>
-        <option>28. Punjab</option>
-        <option>29. Rajasthan</option>
-        <option>30. Sikkim</option>
-        <option>31. Tamil Nadu</option>
-        <option>32. Telangana</option>
-        <option>33. Tripura</option>
-        <option>34. Uttar Pradesh</option>
-        <option>35. Uttarakhand</option>
-        <option>36. West Bengal</option>
-    
-    
-                  </select>
-                </div>
-               <!-- <div class="col-md-2">
-                  <label for="inputZip" class="form-label">Zip Code</label>
-                  <input type="text" class="form-control" id="inputZip">
-                </div>-->
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                
+
+                <div class="col-md-12" aria-placeholder="200">
+                  <label for="inputtext" class="form-label">Feedback</label>
+                  <input type="text" class="form-control" id="inputtext" style="height: 150px;">
                 </div>
               </form>
         </div>
@@ -326,22 +318,35 @@
       </div>
     </div>
   </div>
+  <p class="lead text-center">Unlock your full potential with the power of language and technology. Our NLP-driven platform doesn’t just analyze words—it understands your ambitions, strengths, and goals to guide you toward smarter career decisions.</p>
+  <p class="lead text-center">Apply here for personalized career Guidance. </p>
+  <Center>
+    <a href="Register.html">
+    <button type="button" class="btn btn-sm btn-outline-primary" style="font-family: Arial, Helvetica, sans-serif;">Apply Here</button>
+  </a>
+  </br></br>
+</Center>
 
 
-
-  <!-- Footer Start -->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb bg-dark p-3 mb-0 ">
   
-	<li class="breadcrumb-item" ><a href="{% url 'home' %}">Home</a></li>
-	<li class="breadcrumb-item" ><a href="{% url 'Aboutus' %}">About Us</a></li>
-	<li class="breadcrumb-item"><a href="{% url 'Courses' %}"></a>Courses</li>
-	<li class="breadcrumb-item"><a href="{% url 'Register' %}">Register</a></li>
-	<li class="breadcrumb-item"><a href="{% url 'contactus' %}">Contact Us</a></li>
-    <li class="breadcrumb-item"><a href="http://www.rcert.ac.in">&copy;Designed and \developed By RCERT Chandrapur</a></li>
-    
-  </ol>
- </nav>
+<!-- Footer Start -->
+<footer class="footer">
+  <div class="footer-left">
+    <h2 style="color: white;">Career Guidance</h2>
+    <p>All Rights Reserved, 2025</p>
+  </div>
+  <div class="footer-center">
+   <a href="{% url 'home' %}">Home</a>
+   <a href="{% url 'Aboutus' %}">About Us</a>
+   <a href="{% url 'Register' %}">Register</a>
+   <a href="{% url 'contactus' %}">Feedback</a>
+  </div>
+  <div class="footer-right">
+    <p>Copyright © Career Growth</p>
+    <i class="fab fa-linkedin"></i>
+    <span></span>
+  </div>
+</footer>
  
 
    
