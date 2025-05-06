@@ -4,6 +4,7 @@ from django.template.loader import get_template, TemplateDoesNotExist
 from django.urls import path
 from django.http import JsonResponse
 import random
+from .nlp_suggestor import suggest
 
 def home(request):
     return render(request, 'careerBackend/index.html')
@@ -37,15 +38,16 @@ def others(request):
 
 def register(request):
     if request.method == 'POST':
-        print(request)
-        possibleCareers = ['Defence', 'Engineering', 'Law', 'Medical', 'government', 'others']
-        message = 'Form submitted successfully!'  #  You can customize this
-        choice = random.choice(possibleCareers)
-        url = f"/{choice}/"
+        qualification = request.POST.get('Qualifications')
+        skills = request.POST.get('Skills:')
+        interests = request.POST.get('Interests:')
+        field, job_title = suggest(qualification, skills, interests)
+        message = 'Suggested field ' + field
+        # url = f"/{choice}/"
         data = {
             'message': message,
-            'career': choice,
-            'redirect_url': url,
+            'career': field,
+            # 'redirect_url': url,
         }
         return JsonResponse(data)  #  Send back a JSON response
     return render(request, 'careerBackend/Register.html')
