@@ -43,11 +43,8 @@ def register(request):
         interests = request.POST.get('Interests:')
         field, job_title = suggest(qualification, skills, interests)
         message = 'Suggested field ' + field
-        # url = f"/{choice}/"
-        data = {
-            'message': message,
-            'career': field,
-            # 'redirect_url': url,
+        context = {
+            'career_suggestion': field,
         }
-        return JsonResponse(data)  #  Send back a JSON response
+        return render(request, 'careerBackend/output.html', context)
     return render(request, 'careerBackend/Register.html')
