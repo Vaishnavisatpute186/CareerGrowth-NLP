@@ -235,36 +235,6 @@
             {#  Response will be displayed here #}
          </div>
       </center>
-      <script>
-         const form = document.getElementById('registerform');
-         
-         const responseDiv = document.getElementById('response');
-         form.addEventListener('submit', (event) => {
-         event.preventDefault();
-         const formData = new FormData(form);
-         
-         fetch(form.action, {  // Use the form's action attribute
-          method: 'POST',
-          body: formData,
-         })
-          .then(response => {
-         if (!response.ok) {
-           throw new Error(`HTTP error! status: ${response.status}`);
-         }
-         return response.json();
-          })  // Parse JSON response
-          .then(data => {
-         if (data.redirect_url) {
-           window.location.href = data.redirect_url; // Redirect
-         } else {
-           responseDiv.innerHTML = `<p>data: ${data.message}</p><p>choice: ${data.career}</p>`;  // Display the response
-         }
-          })
-          .catch(error => {
-         responseDiv.textContent = `Error: ${error}`;
-          });
-         });
-      </script>
       <!-- Footer Start -->
       <footer class="footer">
          <div class="footer-left">
