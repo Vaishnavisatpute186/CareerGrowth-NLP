@@ -43,9 +43,9 @@ def register(request):
         interests = request.POST.get('Interests:')
         goals = request.POST.get('Message:')
         field, job_title = suggest(qualification, skills, interests, goals)
-        message = 'Suggested field ' + field
         context = {
             'career_suggestion': field,
+            'job_suggestion': str(job_title),
         }
         return render(request, 'careerBackend/output.html', context)
     return render(request, 'careerBackend/Register.html')
