@@ -107,6 +107,8 @@ def jaccard_similarity(set1, set2):
     union = set1.union(set2)
     return float(len(intersection)) / len(union)
 
+data = parse_csv_data(csv_data)
+
 def suggest_job(user_qualifications, user_skills, user_interests, user_goals, data):
     user_qualifications_tokens = preprocess_text(user_qualifications)
     user_skills_tokens = preprocess_text(user_skills)
@@ -128,14 +130,19 @@ def suggest_job(user_qualifications, user_skills, user_interests, user_goals, da
             best_row = row
 
     if best_row:
-        return best_row['Fields'], best_row['Job Titles']
+        return post_process_results(best_row['Fields'], best_row['Job Titles'], user_qualifications)
     else:
         return None, None
 
-data = parse_csv_data(csv_data)
+def post_process_results(field, job_title, user_qualifications):
+    if user_qualifications.lower() == "12th":
+        return field, None
+    elif user_qualifications.lower() == "graduation":
+        return field, job_title
+    return None, None
 
-def suggest(qual, skills, interests):
-    return suggest_job(qual, skills, interests, "", data)
+def suggest(user_qualifications, skills, interests, goals):
+    return suggest_job(user_qualifications, skills, interests, goals, data)
 
 def main():
     print("Enter your qualifications (e.g. 12th or Graduation):")
@@ -148,20 +155,8 @@ def main():
     user_goals = input().strip()
 
     field, job_title = suggest_job(user_qualifications, user_skills, user_interests, user_goals, data)
-
-    if user_qualifications.lower() == "12th":
-        if field:
-            print("\nSuggested Field:", field)
-        else:
-            print("Sorry, no matching field found.")
-    elif user_qualifications.lower() == "graduation":
-        if field and job_title:
-            print("\nSuggested Field:", field)
-            print("Suggested Job Title(s):", job_title)
-        else:
-            print("Sorry, no matching job suggestion found.")
-    else:
-        print("Unsupported qualification. Please enter '12th' or 'Graduation'.")
+    print("\nSuggested field:", field)
+    print("\nSuggested Job Title(s):", job_title)
 
 if __name__ == "__main__":
     main()

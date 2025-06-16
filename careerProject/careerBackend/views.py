@@ -38,10 +38,11 @@ def others(request):
 
 def register(request):
     if request.method == 'POST':
-        qualification = request.POST.get('Qualifications')
+        qualification = request.POST.get('Qualifications:')
         skills = request.POST.get('Skills:')
         interests = request.POST.get('Interests:')
-        field, job_title = suggest(qualification, skills, interests)
+        goals = request.POST.get('Message:')
+        field, job_title = suggest(qualification, skills, interests, goals)
         message = 'Suggested field ' + field
         context = {
             'career_suggestion': field,
